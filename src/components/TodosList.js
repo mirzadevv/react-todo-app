@@ -1,5 +1,5 @@
 import React from "react";
-const TodosList = ({ todos, onDelete }) => {
+const TodosList = ({ todos, onCompletedChange, onDelete }) => {
   console.log("Todos", todos);
   return (
     <div className="list-wrapper">
@@ -13,6 +13,7 @@ const TodosList = ({ todos, onDelete }) => {
                   className="checkbox"
                   type="checkbox"
                   checked={todo.isCompleted ? true : false}
+                  onChange={() => onCompletedChange(todo.id)}
                 />
                 {todo.title}
                 <i className="input-helper"> </i>
