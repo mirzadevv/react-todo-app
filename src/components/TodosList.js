@@ -1,5 +1,5 @@
 import React from "react";
-const TodosList = ({ todos }) => {
+const TodosList = ({ todos, onDelete }) => {
   console.log("Todos", todos);
   return (
     <div className="list-wrapper">
@@ -18,7 +18,10 @@ const TodosList = ({ todos }) => {
                 <i className="input-helper"> </i>
               </label>
             </div>
-            <i className="remove mdi mdi-close-circle-outline"></i>
+            <i
+              className="remove mdi mdi-close-circle-outline"
+              onClick={() => onDelete(todo.id)}
+            ></i>
           </li>
         ))}
       </ul>
